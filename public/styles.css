@@ -693,15 +693,31 @@ main,
 .archive-page,
 .article-page {
   width: min(calc(100% - var(--page-x) * 2), var(--narrow));
-  padding-top: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(1.4rem, 4vw, 2.4rem);
 }
 
 .archive-page .journal-list {
   grid-template-columns: 1fr;
 }
 
+.archive-page {
+  padding-top: clamp(1.4rem, 4vw, 2.4rem);
+}
+
+.archive-page .section-block {
+  padding-top: 0;
+}
+
 .archive-page .feature-entry {
   grid-column: auto;
+}
+
+/* Uniform, non-bold headline size across every archive entry */
+.archive-page .journal-item h2 {
+  max-width: none;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 .archive-page .journal-item a,
@@ -723,8 +739,82 @@ main,
 
 .article-header h1 {
   margin: 0.7rem 0 0.9rem;
-  font-size: clamp(2rem, 6vw, 3.6rem);
-  line-height: 1.04;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1.08;
+}
+
+/* Centered masthead on article + archive pages (links home) */
+.masthead-header {
+  position: static;
+  padding: 0.7rem 0 0;
+  border-bottom: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.article-masthead {
+  margin: 0;
+  border-bottom: 0;
+  font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+  line-height: 1;
+  padding: 0 0 0.55rem;
+}
+
+.article-byline {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1.4rem;
+}
+
+.byline-avatar {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+}
+
+.byline-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.byline-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.byline-name {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.byline-name a {
+  text-decoration: underline;
+  text-decoration-color: rgba(47, 125, 100, 0.4);
+  text-underline-offset: 3px;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.byline-name a:hover {
+  color: var(--green);
+  text-decoration-color: var(--green);
+}
+
+.byline-meta time {
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .article-standfirst {
