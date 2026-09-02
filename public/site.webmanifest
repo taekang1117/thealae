@@ -1,0 +1,16 @@
+{
+  "name": "The Alae",
+  "short_name": "The Alae",
+  "description": "A tennis journal for match notes, scouting observations, and tactical patterns.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f8f5",
+  "theme_color": "#f7f8f5",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}
