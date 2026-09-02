@@ -3,166 +3,155 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Alae | Tennis Journal</title>
+    <title>The Alae Journal | Tennis Analytics &amp; Match Notes</title>
     <meta
       name="description"
-      content="The Alae is a tennis journal for match notes, serve patterns, scouting observations, and tennis analytics."
+      content="The Alae Journal is a tennis front page for bankroll studies, match notes, scouting observations, and tactical patterns."
     />
-    <meta property="og:title" content="The Alae | Tennis Journal" />
+    <meta property="og:title" content="The Alae Journal" />
     <meta
       property="og:description"
-      content="A quiet tennis notebook for match notes, tactics, and patterns worth remembering."
+      content="A tennis journal front page for analytics, bankroll studies, match notes, and tactical patterns."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://thealae.com/" />
-    <meta name="theme-color" content="#f7f8f5" />
+    <meta name="theme-color" content="#f7f5ef" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/site.webmanifest" />
   </head>
-  <body>
+  <body class="front-page">
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <header class="site-header reveal">
-      <nav class="nav-primary" aria-label="Primary">
-        <a class="brand active" href="#home" aria-label="The Alae home">The Alae</a>
-        <div class="nav-cluster">
-          <a href="#journal">Journal</a>
-          <a href="#desk">Desk</a>
-          <a href="#about">About</a>
-        </div>
+    <header class="newspaper-header reveal">
+      <div class="edition-line">
+        <span>Wednesday, September 2, 2026</span>
+        <span>Tennis Analytics, Match Notes, Bankroll Studies</span>
+        <span>thealae.com</span>
+      </div>
+      <a class="masthead" href="/" aria-label="The Alae Journal home">
+        The Alae Journal
+      </a>
+      <nav class="paper-nav" aria-label="Primary">
+        <a class="active" href="/">Journal</a>
+        <a href="/journal/">Archive</a>
+        <a href="#notebook">Notebook</a>
+        <a href="#about">About</a>
       </nav>
     </header>
 
-    <main id="main">
-      <section class="hero reveal" id="home" aria-labelledby="home-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Tennis journal</p>
-          <h1 id="home-title">The Alae</h1>
-          <p class="hero-lede">
-            A working notebook for tennis patterns: match notes, serve-plus-one
-            ideas, scouting details, and the small observations that decide
-            points.
-          </p>
-          <div class="hero-actions" aria-label="Primary links">
-            <a class="text-link" href="#journal">Read notes</a>
-            <a class="text-link muted-link" href="#desk">Open match desk</a>
+    <main id="main" class="paper-main">
+      <section class="front-grid reveal" aria-labelledby="lead-title">
+        <article class="lead-story">
+          <a href="/journal/kelly-bankroll-monte-carlo.html">
+            <p class="kicker">Lead Article</p>
+            <h1 id="lead-title">
+              What half-Kelly actually does to a $1,000 tennis bankroll
+            </h1>
+            <p class="lead-dek">
+              A Monte Carlo over a 15-bet day on an AUC 0.73 ATP model shows
+              why a winning edge can still spend most of the afternoon feeling
+              unstable.
+            </p>
+          </a>
+          <div class="byline-row">
+            <span>By Tae Jong Kang</span>
+            <time datetime="2026-09-02">September 2, 2026</time>
           </div>
-        </div>
+        </article>
 
-        <figure class="hero-visual" aria-label="Illustrated tennis journal desk">
-          <img src="/assets/court-map.svg" alt="Stylized tennis court with journal marks" />
+        <figure class="lead-image">
+          <a href="/journal/kelly-bankroll-monte-carlo.html">
+            <img
+              src="/assets/court-map.svg"
+              alt="Stylized tennis court map with route lines and journal markings"
+            />
+          </a>
           <figcaption>
-            <span>Hard court</span>
-            <span>Pattern log</span>
-            <span>Live notes</span>
+            Court map study: serve patterns, route lines, and bankroll notes
+            meet in the same match notebook.
           </figcaption>
         </figure>
-      </section>
 
-      <section class="section-block reveal" id="journal" aria-labelledby="journal-title">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Recent entries</p>
-            <h2 id="journal-title">Journal</h2>
-          </div>
-          <a class="section-link" href="/journal/">View archive <span aria-hidden="true">-></span></a>
-        </div>
-
-        <div class="journal-list">
-          <article class="journal-item feature-entry">
+        <aside class="front-briefs" aria-label="Front page briefs">
+          <article>
             <a href="/journal/kelly-bankroll-monte-carlo.html">
-              <div class="entry-topline">
-                <span>Analytics</span>
-                <time datetime="2026-09-02">Sep 2, 2026</time>
-              </div>
-              <h3>What half-Kelly actually does to a $1,000 tennis bankroll</h3>
+              <p class="kicker">Bankroll</p>
+              <h2>Full Kelly buys more variance than most days can tolerate</h2>
               <p>
-                A Monte Carlo over a 15-bet day on an AUC 0.73 ATP model: bankroll
-                fan, intraday drawdown, and how full, half, and quarter Kelly
-                reshape the risk.
+                Half-Kelly keeps most of the growth while pulling the ruin tail
+                back toward survivable territory.
               </p>
             </a>
           </article>
 
-          <article class="journal-item">
+          <article>
             <a href="/journal/serve-plus-one.html">
-              <div class="entry-topline">
-                <span>Match Notes</span>
-                <time datetime="2026-09-02">Sep 2, 2026</time>
-              </div>
-              <h3>Serve plus one is where the match starts to tell the truth</h3>
+              <p class="kicker">Match Notes</p>
+              <h2>Serve plus one is where the match starts to tell the truth</h2>
               <p>
-                A starter entry for tracking first-ball direction, recovery
-                position, and when a rally turns from planned pattern to
-                improvisation.
+                Track the first-ball intention, recovery position, and where
+                the rally drifts when the pattern breaks.
               </p>
             </a>
           </article>
 
-          <article class="journal-item">
-            <a href="#desk">
-              <div class="entry-topline">
-                <span>Training</span>
-                <time datetime="2026-09">September 2026</time>
-              </div>
-              <h3>A clean split step makes the court feel smaller</h3>
+          <article>
+            <a href="#notebook">
+              <p class="kicker">Training</p>
+              <h2>Return depth beats return speed when pressure climbs</h2>
               <p>
-                A compact checklist for footwork, balance, and early reads
-                during neutral-ball drills.
+                Draft notes on second-serve targets, deep neutral returns, and
+                early scoreboard pressure.
               </p>
             </a>
           </article>
-        </div>
+        </aside>
       </section>
 
-      <section class="section-block reveal" id="desk" aria-labelledby="desk-title">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Match desk</p>
-            <h2 id="desk-title">What gets tracked</h2>
-          </div>
+      <section class="notebook-section reveal" id="notebook" aria-labelledby="notebook-title">
+        <div class="section-rule">
+          <p class="kicker">Notebook</p>
+          <h2 id="notebook-title">What gets tracked</h2>
         </div>
 
-        <div class="desk-grid">
-          <article class="desk-card" style="--accent: #2f7d64">
-            <span class="desk-index">01</span>
+        <div class="notebook-grid">
+          <article>
+            <span>01</span>
             <h3>Serve Patterns</h3>
             <p>
-              First serve location, plus-one intention, miss direction, and
-              what the returner protected under pressure.
+              Target, plus-one intent, miss direction, and how often the
+              returner can remove the server's first look.
             </p>
           </article>
 
-          <article class="desk-card" style="--accent: #c84f3d">
-            <span class="desk-index">02</span>
+          <article>
+            <span>02</span>
             <h3>Rally Shape</h3>
             <p>
-              Crosscourt tolerance, down-the-line triggers, net approaches, and
-              who changed direction first.
+              Crosscourt tolerance, direction changes, approach triggers, and
+              the first player forced away from structure.
             </p>
           </article>
 
-          <article class="desk-card" style="--accent: #3d6fa8">
-            <span class="desk-index">03</span>
-            <h3>Momentum</h3>
+          <article>
+            <span>03</span>
+            <h3>Risk</h3>
             <p>
-              Scoreboard moments where selection tightened, body language
-              shifted, or one pattern stopped working.
+              Stake size, drawdown, closing-line movement, and whether a model
+              edge is big enough to deserve action.
             </p>
           </article>
         </div>
       </section>
 
-      <section class="section-block about-section reveal" id="about" aria-labelledby="about-title">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">Built for notes that survive the final score.</h2>
-        </div>
+      <section class="about-note reveal" id="about" aria-labelledby="about-title">
+        <p class="kicker">About</p>
+        <h2 id="about-title">A tennis journal for notes that outlive the score.</h2>
         <p>
-          The Alae is separate from the resume site, but it uses the same simple
-          static approach: fast pages, no database, no AWS bill, and a structure
-          that can grow one journal entry at a time.
+          The Alae keeps tennis writing simple: static pages, clean archives,
+          tactical notes, and model checks that can be published without a
+          database or an AWS bill.
         </p>
       </section>
     </main>
