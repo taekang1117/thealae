@@ -1,0 +1,26 @@
+# The Alae
+
+> Independent tennis analysis focused on the US Open and the ATP tour — match
+> notes, serve and rally patterns, and scouting write-ups. Every read is backed
+> by an in-house win-probability model (an ATP match model, AUC ≈ 0.73), which
+> is discussed on the side as the method behind the calls rather than the main
+> subject.
+
+Author: Tae Jong Kang. Contact: taekang1117@gmail.com
+
+## Journal
+
+- [Journal archive](https://thealae.com/journal/): index of all entries.
+- [What half-Kelly actually does to a $1,000 tennis bankroll](https://thealae.com/journal/kelly-bankroll-monte-carlo.html): a Monte Carlo study of half-Kelly staking on the ATP win-probability model.
+- [Serve plus one is where the match starts to tell the truth](https://thealae.com/journal/serve-plus-one.html): tracking first-ball direction, recovery position, and pattern drift.
+- [Ben Shelton vs Hubert Hurkacz: model prediction & verdict](https://thealae.com/journal/ben-shelton-vs-hubert-hurkacz.html): our ATP model's projection, the tactical matchup, and the verdict for Ben Shelton vs Hubert Hurkacz.
+
+## About the model
+
+- ATP match win-probability model, AUC ≈ 0.73.
+- Used to size positions and to frame tactical reads; it is a supporting tool, not the site's focus.
+
+## Topics
+
+US Open, ATP tour, tennis match analysis, serve patterns, return depth,
+tennis scouting, sports win-probability modeling.

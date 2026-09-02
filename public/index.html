@@ -3,22 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Alae Journal | Tennis Analytics &amp; Match Notes</title>
+    <title>The Alae — US Open &amp; ATP Tennis Analysis, Match Notes &amp; a Prediction Model</title>
     <meta
       name="description"
-      content="The Alae Journal is a tennis front page for bankroll studies, match notes, scouting observations, and tactical patterns."
+      content="Tennis analysis and match notes on the US Open and the ATP tour — serve patterns, tactical reads, and scouting write-ups, backed by an in-house win-probability model."
     />
-    <meta property="og:title" content="The Alae Journal" />
+    <meta
+      name="keywords"
+      content="US Open tennis, ATP analysis, tennis match notes, tennis analytics, tennis prediction model, serve patterns, tennis scouting"
+    />
+    <meta name="author" content="Tae Jong Kang" />
+    <link rel="canonical" href="https://thealae.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="The Alae" />
+    <meta property="og:title" content="The Alae — US Open &amp; ATP Tennis Analysis" />
     <meta
       property="og:description"
-      content="A tennis journal front page for analytics, bankroll studies, match notes, and tactical patterns."
+      content="Tennis analysis and match notes on the US Open and the ATP tour, backed by an in-house win-probability model."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://thealae.com/" />
+    <meta property="og:image" content="https://thealae.com/assets/kelly_bankroll_sim.png" />
+    <meta property="og:image:alt" content="Fan chart of simulated tennis-bankroll paths from a win-probability model" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Alae — US Open &amp; ATP Tennis Analysis" />
+    <meta
+      name="twitter:description"
+      content="Tennis analysis and match notes on the US Open and the ATP tour, backed by an in-house win-probability model."
+    />
+    <meta name="twitter:image" content="https://thealae.com/assets/kelly_bankroll_sim.png" />
+
     <meta name="theme-color" content="#f7f5ef" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles.css?v=5" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Structured data for search engines and AI crawlers -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://thealae.com/#website",
+            "url": "https://thealae.com/",
+            "name": "The Alae",
+            "description": "Tennis analysis and match notes on the US Open and the ATP tour, backed by an in-house win-probability model.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://thealae.com/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://thealae.com/#person",
+            "name": "Tae Jong Kang",
+            "url": "https://thealae.com/",
+            "email": "taekang1117@gmail.com",
+            "knowsAbout": [
+              "US Open tennis",
+              "ATP tour analysis",
+              "Tennis analytics",
+              "Sports win-probability modeling",
+              "Match scouting and tactics"
+            ]
+          },
+          {
+            "@type": "Blog",
+            "@id": "https://thealae.com/#blog",
+            "url": "https://thealae.com/journal/",
+            "name": "The Alae Journal",
+            "about": ["US Open tennis", "ATP tour", "Tennis match analysis"],
+            "author": { "@id": "https://thealae.com/#person" },
+            "publisher": { "@id": "https://thealae.com/#person" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="front-page">
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -30,7 +92,7 @@
         <span>thealae.com</span>
       </div>
       <a class="masthead" href="/" aria-label="The Alae Journal home">
-        The Alae Journal
+        THE ALAE.COM
       </a>
       <nav class="paper-nav" aria-label="Primary">
         <a class="active" href="/">Journal</a>
@@ -48,11 +110,6 @@
             <h1 id="lead-title">
               What half-Kelly actually does to a $1,000 tennis bankroll
             </h1>
-            <p class="lead-dek">
-              A Monte Carlo over a 15-bet day on an AUC 0.73 ATP model shows
-              why a winning edge can still spend most of the afternoon feeling
-              unstable.
-            </p>
           </a>
           <div class="byline-row">
             <span>By Tae Jong Kang</span>
@@ -63,20 +120,26 @@
         <figure class="lead-image">
           <a href="/journal/kelly-bankroll-monte-carlo.html">
             <img
-              src="/assets/court-map.svg"
-              alt="Stylized tennis court map with route lines and journal markings"
+              src="/assets/kelly_bankroll_sim.png"
+              alt="Fan chart of 1,000 simulated bankroll paths over 15 bets showing median drift from $1,000 to $1,120"
             />
           </a>
-          <figcaption>
-            Court map study: serve patterns, route lines, and bankroll notes
-            meet in the same match notebook.
-          </figcaption>
         </figure>
 
-        <aside class="front-briefs" aria-label="Front page briefs">
+        <aside class="front-briefs" aria-label="Opinions">
+          <p class="briefs-heading">Opinions</p>
+          <article>
+            <a href="/journal/ben-shelton-vs-hubert-hurkacz.html">
+              <h2>Ben Shelton vs Hubert Hurkacz: the model's read and my verdict</h2>
+              <p>
+                What the ATP win-probability model projects for the matchup,
+                the tactical read, and where I land.
+              </p>
+            </a>
+          </article>
+
           <article>
             <a href="/journal/kelly-bankroll-monte-carlo.html">
-              <p class="kicker">Bankroll</p>
               <h2>Full Kelly buys more variance than most days can tolerate</h2>
               <p>
                 Half-Kelly keeps most of the growth while pulling the ruin tail
@@ -87,7 +150,6 @@
 
           <article>
             <a href="/journal/serve-plus-one.html">
-              <p class="kicker">Match Notes</p>
               <h2>Serve plus one is where the match starts to tell the truth</h2>
               <p>
                 Track the first-ball intention, recovery position, and where
@@ -98,7 +160,6 @@
 
           <article>
             <a href="#notebook">
-              <p class="kicker">Training</p>
               <h2>Return depth beats return speed when pressure climbs</h2>
               <p>
                 Draft notes on second-serve targets, deep neutral returns, and
@@ -111,7 +172,6 @@
 
       <section class="notebook-section reveal" id="notebook" aria-labelledby="notebook-title">
         <div class="section-rule">
-          <p class="kicker">Notebook</p>
           <h2 id="notebook-title">What gets tracked</h2>
         </div>
 
