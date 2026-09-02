@@ -453,6 +453,25 @@ main,
   margin: 1.2rem 0 0;
 }
 
+.chart-figure {
+  margin: 2.2rem 0 0;
+}
+
+.chart-figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.chart-figure figcaption {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .article-content h2 {
   margin-top: 2rem;
   font-size: 1.2rem;

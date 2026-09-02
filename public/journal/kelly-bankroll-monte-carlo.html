@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelly Bankroll Monte Carlo | The Alae</title>
+    <meta
+      name="description"
+      content="A Monte Carlo study of a half-Kelly staking plan on an ATP match model: bankroll growth, intraday drawdown, and how full, half, and quarter Kelly compare over a 15-bet day."
+    />
+    <meta property="og:title" content="Kelly Bankroll Monte Carlo | The Alae" />
+    <meta
+      property="og:description"
+      content="What half-Kelly staking on an AUC 0.73 ATP model actually does to a $1,000 bankroll over a 15-bet day."
+    />
+    <meta property="og:type" content="article" />
+    <meta name="theme-color" content="#f7f8f5" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <nav class="nav-primary" aria-label="Primary">
+        <a class="brand" href="/">The Alae</a>
+        <div class="nav-cluster">
+          <a class="active" href="/journal/">Journal</a>
+          <a href="/#desk">Desk</a>
+          <a href="/#about">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-page">
+      <article class="article-shell reveal">
+        <a class="section-link back-link" href="/journal/">
+          <span aria-hidden="true">&lt;-</span> Archive
+        </a>
+        <header class="article-header">
+          <p class="eyebrow">Analytics</p>
+          <h1>What half-Kelly actually does to a $1,000 tennis bankroll</h1>
+          <time datetime="2026-09-02">September 2, 2026</time>
+        </header>
+
+        <div class="article-content">
+          <p>
+            A match model is only half of a betting plan. The other half is
+            sizing: how much of the bankroll goes on each edge, and what that
+            choice does to the shape of a day. To pressure-test the sizing rules
+            before risking anything real, I ran a Monte Carlo over a single
+            trading day &mdash; 1,000 simulated days, each 15 bets long, starting
+            from a $1,000 bankroll that resets every morning.
+          </p>
+
+          <p>
+            The engine underneath is an ATP match model with an out-of-sample
+            AUC of about 0.73 &mdash; good enough to be worth betting, not good
+            enough to be forgiving. Stakes follow a <strong>half-Kelly</strong>
+            fraction, capped at 15% of the bankroll on any one bet, and only
+            fired when the modelled edge clears a two-point floor. Everything
+            below is what those rules produced.
+          </p>
+
+          <figure class="chart-figure">
+            <img
+              src="/assets/kelly_bankroll_sim.png"
+              alt="Fan chart of 1,000 simulated bankroll paths over 15 bets. The median line drifts up from $1,000 to about $1,120, with a widening blue band of outcomes around it."
+            />
+            <figcaption>
+              1,000 simulated bankroll paths over a 15-bet day. The dark line is
+              the median; the shaded bands are the middle of the distribution.
+              The drift is up, but the spread is wide &mdash; the edge is real and
+              small.
+            </figcaption>
+          </figure>
+
+          <p>
+            The median day ends up, but only modestly &mdash; from $1,000 to
+            roughly $1,120. What the fan really shows is variance: a genuine but
+            thin edge, wrapped in a cloud of paths that finish anywhere from the
+            $800s to the $1,400s. On any single day, noise dominates the signal.
+          </p>
+
+          <h2>The day is bumpier than the ending suggests</h2>
+
+          <p>
+            An ending bankroll hides the ride it took to get there. Tracking the
+            worst peak-to-trough drop inside each simulated day tells a more
+            honest story about what the sizing feels like in the moment.
+          </p>
+
+          <figure class="chart-figure">
+            <img
+              src="/assets/kelly_drawdown_distribution.png"
+              alt="Histogram of the worst intraday drawdown for each simulated day, centered around minus 15 percent, with a long tail stretching past minus 40 percent."
+            />
+            <figcaption>
+              Worst intraday drawdown per simulated day. The median day dips
+              about 15% below its running peak before recovering, and a real tail
+              of days falls 30&ndash;45%.
+            </figcaption>
+          </figure>
+
+          <p>
+            The typical day gives back around 15% from its high-water mark at
+            some point, and the tail is not academic: a meaningful share of days
+            draw down 30% or more before the session closes. A plan that only
+            looks at end-of-day results will badly underestimate how often the
+            bankroll <em>looks</em> like it is losing.
+          </p>
+
+          <h2>Where the day tends to end</h2>
+
+          <figure class="chart-figure">
+            <img
+              src="/assets/kelly_ending_distribution.png"
+              alt="Histogram of ending bankroll after one 15-bet day. The distribution is roughly bell-shaped and slightly right-skewed, with the median line sitting just above the $1,000 starting line."
+            />
+            <figcaption>
+              Distribution of ending bankroll after one 15-bet day. Dashed line
+              is the $1,000 start; solid line is the median. The mass sits just
+              to the right of even, with a longer upside tail.
+            </figcaption>
+          </figure>
+
+          <p>
+            The ending distribution is close to symmetric with a slight lean to
+            the upside &mdash; the signature of a small positive edge compounding
+            through Kelly sizing. The median finishes a touch above the start,
+            plenty of days finish red, and the fat right tail is where the profit
+            actually lives over a long enough sample.
+          </p>
+
+          <h2>Sizing is the biggest lever</h2>
+
+          <p>
+            The same model and the same bet outcomes look completely different
+            depending on the Kelly multiplier. Holding every simulated bet fixed
+            and changing only the fraction isolates what sizing alone does.
+          </p>
+
+          <figure class="chart-figure">
+            <img
+              src="/assets/kelly_policy_sensitivity.png"
+              alt="Violin and box plots comparing ending bankroll under quarter, half, and full Kelly. Spread grows dramatically from quarter to full Kelly while the median barely moves."
+            />
+            <figcaption>
+              Ending bankroll under quarter, half, and full Kelly on identical
+              bets. Full Kelly widens both tails sharply while the median barely
+              improves &mdash; more variance bought for little extra expected
+              return.
+            </figcaption>
+          </figure>
+
+          <p>
+            This is the argument for staking conservatively when the model's
+            edge is uncertain. Full Kelly stretches the distribution in both
+            directions &mdash; a taller upside, but a downside that reaches toward
+            zero &mdash; while barely lifting the median. Quarter Kelly is almost
+            boring by comparison. Half-Kelly is the compromise the main plan
+            uses: most of the growth, a fraction of the ruin risk.
+          </p>
+
+          <h2>Being ahead is not the same as being right</h2>
+
+          <figure class="chart-figure">
+            <img
+              src="/assets/kelly_probability_ahead.png"
+              alt="Line chart showing the probability the bankroll is at or above $1,000 as the day progresses. It starts at 100 percent, drops to about 63 percent after two bets, and drifts back up to roughly 68 percent by bet 15."
+            />
+            <figcaption>
+              Share of simulated paths at or above the $1,000 starting point,
+              bet by bet. It sinks early, then grinds back &mdash; you are behind
+              more often than the positive expectation suggests.
+            </figcaption>
+          </figure>
+
+          <p>
+            Even with a positive-expectation model, the chance of sitting at or
+            above the starting line dips fast &mdash; to roughly 63% after just a
+            couple of bets &mdash; before the edge slowly pulls it back up toward
+            68% by the end of the day. In other words, a winning system spends a
+            lot of the day looking like a losing one. That gap between
+            <em>correct</em> and <em>ahead</em> is exactly where discipline
+            breaks down.
+          </p>
+
+          <h2>What the day says</h2>
+          <ul>
+            <li><strong>The edge is real but thin.</strong> A 0.73-AUC model earns a small positive drift, not a steep one.</li>
+            <li><strong>Variance runs the day.</strong> Expect a ~15% intraday drawdown as normal, with a tail to 30%+.</li>
+            <li><strong>Sizing dwarfs selection.</strong> Moving from full to quarter Kelly changes the risk profile more than most model tweaks.</li>
+            <li><strong>Stay conservative.</strong> Half-Kelly with a stake cap and an edge floor keeps the ruin tail off the table while keeping most of the growth.</li>
+          </ul>
+
+          <p>
+            None of this makes the model better. It makes the plan around the
+            model survivable &mdash; which, over a season of these days, is the
+            part that actually compounds.
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <span>&copy; <span id="year">2026</span> The Alae</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="mailto:taekang1117@gmail.com">Contact</a>
+      </nav>
+    </footer>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
