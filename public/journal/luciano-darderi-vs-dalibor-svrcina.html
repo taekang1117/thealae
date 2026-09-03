@@ -69,27 +69,59 @@
             "@type": "SportsEvent",
             "@id": "https://thealae.com/journal/luciano-darderi-vs-dalibor-svrcina#match",
             "name": "Luciano Darderi vs Dalibor Svrcina",
+            "description": "US Open 2026 men's singles match between Luciano Darderi and Dalibor Svrcina, previewed with The Alae's ATP win-probability model.",
             "sport": "Tennis",
+            "image": "https://thealae.com/assets/darderi-svrcina-serve.svg",
             "startDate": "2026-09-03",
+            "endDate": "2026-09-03",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
             "superEvent": {
               "@type": "SportsEvent",
               "name": "US Open 2026",
               "sport": "Tennis",
               "startDate": "2026-08-23",
               "endDate": "2026-09-13",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
               "location": {
                 "@type": "Place",
-                "name": "USTA Billie Jean King National Tennis Center, New York"
+                "name": "USTA Billie Jean King National Tennis Center",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Flushing Meadows–Corona Park",
+                  "addressLocality": "Flushing",
+                  "addressRegion": "NY",
+                  "postalCode": "11368",
+                  "addressCountry": "US"
+                }
               }
             },
             "location": {
               "@type": "Place",
-              "name": "USTA Billie Jean King National Tennis Center, New York"
+              "name": "USTA Billie Jean King National Tennis Center",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Flushing Meadows–Corona Park",
+                "addressLocality": "Flushing",
+                "addressRegion": "NY",
+                "postalCode": "11368",
+                "addressCountry": "US"
+              }
             },
+            "performer": [
+              { "@type": "Person", "name": "Luciano Darderi" },
+              { "@type": "Person", "name": "Dalibor Svrcina" }
+            ],
             "competitor": [
               { "@type": "Person", "name": "Luciano Darderi" },
               { "@type": "Person", "name": "Dalibor Svrcina" }
-            ]
+            ],
+            "organizer": {
+              "@type": "Organization",
+              "name": "United States Tennis Association",
+              "url": "https://www.usopen.org/"
+            }
           }
         ]
       }
