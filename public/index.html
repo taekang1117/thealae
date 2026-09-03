@@ -37,7 +37,8 @@
     <meta name="twitter:image" content="https://thealae.com/assets/kelly_bankroll_sim.png" />
 
     <meta name="theme-color" content="#f7f5ef" />
-    <link rel="stylesheet" href="/styles.css?v=5" />
+    <link rel="stylesheet" href="/styles.css?v=13" />
+    <link rel="alternate" type="application/rss+xml" title="The Alae Journal" href="https://thealae.com/feed.xml" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/site.webmanifest" />
 
@@ -59,7 +60,9 @@
             "@type": "Person",
             "@id": "https://thealae.com/#person",
             "name": "Tae Jong Kang",
-            "url": "https://thealae.com/",
+            "url": "https://thealae.com/about",
+            "image": "https://thealae.com/assets/TaeJongKang.png",
+            "sameAs": ["https://taejongkang.com"],
             "email": "taekang1117@gmail.com",
             "knowsAbout": [
               "US Open tennis",
@@ -104,7 +107,7 @@
     <main id="main" class="paper-main">
       <section class="front-grid reveal" aria-labelledby="lead-title">
         <article class="lead-story">
-          <a href="/journal/kelly-bankroll-monte-carlo.html">
+          <a href="/journal/kelly-bankroll-monte-carlo">
             <p class="kicker">Lead Article</p>
             <h1 id="lead-title">
               What half-Kelly actually does to a $1,000 tennis bankroll
@@ -117,7 +120,7 @@
         </article>
 
         <figure class="lead-image">
-          <a href="/journal/kelly-bankroll-monte-carlo.html">
+          <a href="/journal/kelly-bankroll-monte-carlo">
             <img
               src="/assets/kelly_bankroll_sim.png"
               alt="Fan chart of 1,000 simulated bankroll paths over 15 bets showing median drift from $1,000 to $1,120"
@@ -128,7 +131,18 @@
         <aside class="front-briefs" id="opinions" aria-label="Opinions">
           <p class="briefs-heading">Opinions</p>
           <article>
-            <a href="/journal/ben-shelton-vs-hubert-hurkacz.html">
+            <a href="/journal/luciano-darderi-vs-dalibor-svrcina">
+              <h2>[US Open 2026] Luciano Darderi vs Dalibor Svrcina: The market is too cheap on Darderi</h2>
+              <p>
+                The model makes Darderi a 67.7% favorite, yet the market prices
+                him at just 56&cent;. Rested, healthy, and a hard-court Slam
+                quarterfinalist &mdash; here's why I back Darderi.
+              </p>
+            </a>
+          </article>
+
+          <article>
+            <a href="/journal/ben-shelton-vs-hubert-hurkacz">
               <h2>[US Open 2026] Ben Shelton vs Hubert Hurkacz: Fatigue is a key factor</h2>
               <p>
                 The model makes Shelton an 83.8% favorite &mdash; here's why I'm
@@ -138,7 +152,7 @@
           </article>
 
           <article>
-            <a href="/journal/kelly-bankroll-monte-carlo.html">
+            <a href="/journal/kelly-bankroll-monte-carlo">
               <h2>Full Kelly buys more variance than most days can tolerate</h2>
               <p>
                 Half-Kelly keeps most of the growth while pulling the ruin tail
@@ -189,9 +203,9 @@
         <p class="kicker">About</p>
         <h2 id="about-title">A tennis journal for notes that outlive the score.</h2>
         <p>
-          The Alae keeps tennis writing simple: static pages, clean archives,
-          tactical notes, and model checks that can be published without a
-          database or an AWS bill.
+          The Alae publishes independent tennis analysis: match context, tactical
+          notes, and model checks. Read the <a href="/about">author profile</a>
+          and <a href="/methodology">methodology and editorial standards</a>.
         </p>
       </section>
     </main>
@@ -200,6 +214,8 @@
       <span>&copy; <span id="year">2026</span> The Alae</span>
       <nav class="footer-links" aria-label="Footer">
         <a href="/journal/">Archive</a>
+        <a href="/about">About</a>
+        <a href="/methodology">Methodology</a>
         <a href="mailto:taekang1117@gmail.com">Contact</a>
       </nav>
     </footer>

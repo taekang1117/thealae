@@ -8,7 +8,9 @@ A lightweight static tennis journal for `thealae.com`.
 npm run preview
 ```
 
-Open `http://127.0.0.1:8080`.
+Open `http://127.0.0.1:8080`. The preview uses Wrangler Pages, so clean URLs
+such as `/journal/luciano-darderi-vs-dalibor-svrcina` resolve locally exactly
+as they do on Cloudflare Pages.
 
 ## GitHub + Cloudflare Pages
 

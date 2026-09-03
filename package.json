@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A static tennis journal website for thealae.com.",
   "scripts": {
-    "preview": "python3 -m http.server 8080 --directory public"
+    "preview": "wrangler pages dev public --port 8080"
+  },
+  "devDependencies": {
+    "wrangler": "^4.128.0"
   },
   "keywords": [
     "tennis",

@@ -861,6 +861,123 @@ main,
   line-height: 1.5;
 }
 
+.match-facts {
+  margin: 1.25rem 0 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.match-facts-heading {
+  padding: 1rem 1.2rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.match-facts-heading .kicker {
+  margin: 0;
+}
+
+.match-facts h2 {
+  margin: 0.22rem 0 0;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+}
+
+.match-facts dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+}
+
+.match-facts dl > div {
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.match-facts dl > div:nth-child(odd) {
+  border-right: 1px solid var(--line);
+}
+
+.match-facts dt {
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.match-facts dd {
+  margin: 0.22rem 0 0;
+  color: var(--ink);
+  font-size: 0.94rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.match-facts-note {
+  margin: 0;
+  padding: 0.8rem 1.2rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.article-disclosure {
+  border-left: 3px solid var(--line-strong);
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+.sources {
+  margin-top: 2.4rem;
+  border-top: 1px solid var(--line-strong);
+  padding-top: 0.2rem;
+}
+
+.sources ol {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.sources li {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.sources li + li {
+  margin-top: 0.65rem;
+}
+
+.author-intro {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: center;
+  gap: 1.15rem;
+  margin: 1.8rem 0 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.author-intro img {
+  width: 96px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.author-intro p {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 1.5;
+}
+
 /* Inline "The Model" read */
 .model-read {
   margin: 1.4rem 0 0;
@@ -1066,6 +1183,24 @@ main,
   .journal-item a,
   .empty-entry {
     min-height: 220px;
+  }
+}
+
+@media (max-width: 560px) {
+  .match-facts dl {
+    grid-template-columns: 1fr;
+  }
+
+  .match-facts dl > div:nth-child(odd) {
+    border-right: 0;
+  }
+
+  .author-intro {
+    grid-template-columns: 70px minmax(0, 1fr);
+  }
+
+  .author-intro img {
+    width: 70px;
   }
 }
 
